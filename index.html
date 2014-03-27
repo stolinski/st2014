@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Backboner</title>
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,900,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <header class="header">
+    <a class="homelink" href="/#"><span class="logo">ST</span><h1 class="name">Scott Tolinski</h1></a>
+    <nav>
+      <ul>
+        <li><a class="about" href="/#about">About</a></li>
+        <li><a class="projects" href="/#projects">Projects</a></li>
+        <li><a class="contact" href="/#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <section id="appbody">
+  </section>
+  <footer class="footer">
+    <h3>Where to find me</h3>
+    <ul class="social">
+      <li><a href="#">Facebook</a></li>
+      <li><a href="#">Twitter</a></li>
+      <li><a href="#">Youtube</a></li>
+      <li><a href="#">Github</a></li>
+      <li><a href="#">Delicious</a></li>
+      <li><a href="#">Bitbucket</a></li>
+      <li><a href="#">LinkedIn</a></li>
+    </ul>
+  </footer>
+
+
+  <script type="text/template" id="page-template">
+    <h2><%= title %></h2>
+    <p>
+      <%= body %>
+    </p>
+  </script>
+
+  <script type="text/template" id="item-template">
+    <div class="view">
+      <input type="checkbox" <%=completed ? 'checked' : ''%> class="toggle">
+      <label><%= title %></label>
+      <button class="destroy"></button>
+    </div>
+    <input value="<%= title %>" class="edit">
+  </script>
+
+  <script type="text/template" id="stats-template">
+    <span id="todo-count"><strong><%= remaining %></strong> <%= remaining === 1 ? 'item' : 'items' %> left</span>
+    <ul id="filters">
+      <li><a href="#/about">About</a></li>
+      <li><a href="#/projects">Projects</a></li>
+      <li><a href="#/contact">Contact</a></li>
+    </ul>
+    <% if (completed) { %>
+    <button id="clear-completed">Clear completed (<%= completed %>)</button>
+    <% } %>
+  </script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="http://documentcloud.github.com/underscore/underscore-min.js"></script>
+  <script src="http://documentcloud.github.com/backbone/backbone-min.js"></script>
+  <script src="js/backbone.localStorage.js"></script>
+  <script src="js/models/page.js"></script>
+  <script src="js/collections/pages.js"></script>
+  <!-- <script src="js/views/todos.js"></script> -->
+  <script src="js/views/app.js"></script>
+  <script src="js/views/page.js"></script>
+  <script src="js/routers/router.js"></script>
+  <script src="js/app.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,179 @@
+@import "compass";
+@import "toolkit";
+// @import "breakpoint";
+@import 'mixins';
+@import 'vars';
+@import "reset";
+
+body {
+  background: #333;
+  color:white;
+  font-family: 'Lato', sans-serif;
+}
+
+.header {
+  @include clearfix;
+  background: #ECF0F1;
+  overflow: hidden;
+  height: 52px;
+}
+
+
+.logo {
+  text-transform: uppercase;
+  font-weight: 900;
+  letter-spacing: 1px;
+  background: map-get($pages, home);
+  float: left;
+  color:white;
+  padding: 10px;
+  position: relative;
+  @include fs(26px);
+  z-index: 100;
+  overflow: hidden;
+  &:before {
+    content:'';
+    top:0;
+    left:52px;
+    height: 52px;
+    width: 156px;
+    position: absolute;
+    background: $about;
+    display: block;
+    z-index:-1;
+    @include trans;
+  background-image: linear-gradient(90deg,
+  map-get($pages, about) 33.333%, map-get($pages, projects) 33.333%, map-get($pages, projects) 66.667%,
+  map-get($pages, contact) 66.667%);
+  background-size:156px 52px;
+  }
+  &:hover:before {
+  }
+  &:hover:before {
+  }
+}
+.about .logo:before {
+  left:0px;
+}
+.projects .logo:before {
+  left:-52px;
+}
+
+.contact .logo:before {
+  left:-104px;
+}
+
+// .logo {
+//   text-transform: uppercase;
+//   font-weight: 900;
+//   letter-spacing: 1px;
+//   background: $blue;
+//   float: left;
+//   color:white;
+//   padding: 10px;
+//   position: relative;
+//   @include fs(26px);
+//   z-index: 100;
+//   overflow: hidden;
+//   &:before, &:after {
+//     content:'';
+//     top:0;
+//     right:0;
+//     height: 52px;
+//     width: 52px;
+//     position: absolute;
+//     background: white;
+//     display: block;
+//     z-index:-1;
+//     opacity: 0;
+//     @include trans;
+//     @include transform(rotate(0deg));
+//     transform-origin: center center; 
+//   }
+//   &:after {
+//     background:#333;
+//   }
+//   &:hover{
+//   }
+//   &:hover:after, &:hover:before {
+//     top: 6px;
+//     right: 6px;
+//     height: 40px;
+//     width: 40px;
+//     opacity: 1.0;
+//   }
+//   &:hover:after {
+//     @include transform(rotate(68.5deg));
+//     height: 28px;
+// width: 28px;
+// right: 12px;
+// top: 12px;
+//   }
+//   &:hover:before {
+//     @include transform(rotate(22.5deg));
+//   }
+// }
+
+.name {
+  margin: 0;
+  position: absolute;
+  z-index: 10;
+  left: -200px;
+  @include fs(24px);
+  text-decoration: none;
+  font-weight: 900;
+  line-height: 52px;
+  color:#333;
+  @include trans;
+}
+
+.homelink:hover {
+  .name {
+    left:65px;
+  }
+}
+
+nav {
+  float: right;
+  li {
+    float: left;
+  }
+  a {
+    text-decoration: none;
+    padding:15px 20px 18px;
+    color:#333;
+    font-weight: 700;
+    display: block;
+    border-bottom: 4px solid #ECF0F1;
+    @include trans;
+  }
+  a:hover {
+    padding-bottom: 14px;
+  }
+}
+
+
+@each $item, $bgcolor in $pages { 
+  body.#{$item} nav a.#{$item} {
+    padding-bottom:14px;
+  }
+  a.#{$item} {
+    border-color: $bgcolor;
+  }
+}
+
+
+.footer {
+  a {
+    color:white;
+    text-decoration: none;
+  }
+  .social li {
+    float: left;
+    display: list-item;
+    + li {
+      margin-left: 20px;
+    }
+  }
+}
+
