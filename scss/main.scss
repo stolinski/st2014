@@ -4,6 +4,19 @@
 @import 'mixins';
 @import 'vars';
 @import "reset";
+@import 'typography';
+
+::-moz-selection {
+    text-shadow: none;
+    color: #FFF;
+    @include trans;
+}
+
+::selection {
+    text-shadow: none;
+    color: #FFF;
+    @include trans;
+}
 
 body {
   background: #333;
@@ -156,10 +169,42 @@ body {
   a.#{$item} {
     border-color: $bgcolor;
   }
+  body.#{$item} .main-content a {
+    color: $bgcolor;
+  }
+  body.#{$item} ::-moz-selection {
+    background: $bgcolor;
+  }
+  body.#{$item} ::selection {
+    background: $bgcolor;
+  }
 }
 
 
+.main-content {
+  padding: 40px 4%;
+  p {
+    @include fs(24px);
+    margin-bottom: 20px;
+  }
+  a {
+    text-decoration: none;
+  }
+}
+
+
+
+
+
+
+
+
+
+
 .footer {
+  background: #222;
+  padding:20px 4%;
+  @include clearfix;
   a {
     color:white;
     text-decoration: none;

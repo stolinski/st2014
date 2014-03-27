@@ -23,7 +23,21 @@ app.PageView = Backbone.View.extend({
   },
 
   change: function(slug) {
-    // $("#appbody").html(this.el);
+
     this.render(slug);
-  }
+  },
+
+  transitionOut: function (callback) {
+    console.log('tranout');
+    var view = this;
+
+    view.$el.removeClass('is-visible');
+    view.$el.on('transitionend', function () {
+      if (_.isFunction(callback)) {
+        callback();
+      }
+    });
+
+  },
+
 });
