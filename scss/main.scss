@@ -23,7 +23,7 @@ body {
   text-transform: uppercase;
   font-weight: 900;
   letter-spacing: 1px;
-  background: map-get($pages, home);
+  background: pcolor(home);
   float: left;
   color:white;
   padding: 10px;
@@ -42,19 +42,15 @@ body {
     display: block;
     z-index:-1;
     @include trans;
-  background-image: linear-gradient(90deg,
-  map-get($pages, about) 33.333%, map-get($pages, projects) 33.333%, map-get($pages, projects) 66.667%,
-  map-get($pages, contact) 66.667%);
-  background-size:156px 52px;
-  }
-  &:hover:before {
-  }
-  &:hover:before {
+    background-image: linear-gradient(90deg, pcolor(about) 33.333%, pcolor(projects) 33.333%, pcolor(projects) 66.667%, pcolor(contact) 66.667%);
+    background-size:156px 52px;
   }
 }
+
 .about .logo:before {
   left:0px;
 }
+
 .projects .logo:before {
   left:-52px;
 }
@@ -133,7 +129,7 @@ body {
   }
 }
 
-nav {
+.main-nav {
   float: right;
   li {
     float: left;
