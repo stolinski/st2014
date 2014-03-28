@@ -272,7 +272,19 @@ body {
   }
   h5 {
     color:#aaa;
-    margin:20px 0 10px;
+    margin:20px 0 6px;
+  }
+  .time {
+    margin-bottom: 10px;
+    display: block;
+    @include fs(13px);
+    color:#aaa;
+  }
+  ul {
+    margin: 0 0 0 20px;
+    li {
+      margin-bottom: 10px;
+    }
   }
 }
 
