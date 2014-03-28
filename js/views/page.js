@@ -12,7 +12,9 @@ app.PageView = Backbone.View.extend({
 
   render: function(slug) {
     if (!slug) { slug = 'home'; }
-
+    if (slug == 'about') {
+      this.template = _.template( $( '#about-template' ).html() );
+    }
     var goal = _.findWhere(app.Pages.toJSON(), {slug: slug});
 
     this.$el.html(this.template(goal));
@@ -23,21 +25,6 @@ app.PageView = Backbone.View.extend({
   },
 
   change: function(slug) {
-
     this.render(slug);
   },
-
-  transitionOut: function (callback) {
-    console.log('tranout');
-    var view = this;
-
-    view.$el.removeClass('is-visible');
-    view.$el.on('transitionend', function () {
-      if (_.isFunction(callback)) {
-        callback();
-      }
-    });
-
-  },
-
 });
