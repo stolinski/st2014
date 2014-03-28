@@ -43,3 +43,6 @@
 @function pcolor($color) {
   @return map-get($pages, $color);
 }
+@function social($color) {
+  @return map-get($social, $color);
+}

@@ -51,7 +51,7 @@ body {
     height: 52px;
     width: 156px;
     position: absolute;
-    background: $about;
+    background: pcolor(about);
     display: block;
     z-index:-1;
     @include trans;
@@ -180,6 +180,26 @@ body {
   }
 }
 
+@each $site, $bgcolor in $social { 
+  .social {
+    .fa-#{$site} {
+      background: $bgcolor;
+      color: #FFF;
+      padding: 5px 8px;
+      @include trans;
+      @include border-radius(3px);
+      &:hover {
+        background: $bgcolor - 40;
+      }
+    }
+  }
+}
+.social {
+  .text {
+    padding-left:10px;
+  }
+}
+
 
 .main-content {
   padding: 40px 4%;
@@ -203,7 +223,7 @@ body {
 
 .footer {
   background: #222;
-  padding:20px 4%;
+  padding:40px 4% 60px;
   @include clearfix;
   a {
     color:white;
