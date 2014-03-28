@@ -191,7 +191,10 @@ body {
   body.#{$item} .main-content a {
     color: $bgcolor;
   }
-  body.#{$item} ::-moz-selection, body.#{$item} ::selection {
+  body.#{$item} ::-moz-selection {
+    background: $bgcolor;
+  }
+  body.#{$item} ::selection {
     background: $bgcolor;
   }
 }
@@ -214,7 +217,7 @@ body {
 .resume {
   background: $footer;
   width: 80%;
-  margin: 0 auto;
+  margin: 80px auto;
   font-family:"Inconsolata", monospace;
   .fakebuttons {
     background: pcolor(about);
@@ -284,6 +287,7 @@ body {
     margin: 0 0 0 20px;
     li {
       margin-bottom: 10px;
+      color:#eee;
     }
   }
 }
@@ -292,7 +296,6 @@ body {
 
 .social {
   .fa {
-    color: #ccc;
     padding: 5px 8px;
     @include trans;
     @include border-radius(3px);
