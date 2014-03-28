@@ -6,6 +6,12 @@
 @import "reset";
 @import 'typography';
 
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+       box-sizing: border-box;
+}
+
+
 ::-moz-selection {
     text-shadow: none;
     color: #FFF;
@@ -216,8 +222,22 @@ body {
 
 
 
-
-
+html, body {
+  height: 100%;
+}
+.wrap {
+  min-height: 100%;
+  /* equal to footer height */
+  margin-bottom: -170px; 
+}
+.wrap:after {
+  content: "";
+  display: block;
+}
+.footer, .wrap:after {
+  /* .push must be the same height as footer */
+  height: 170px; 
+}
 
 
 
