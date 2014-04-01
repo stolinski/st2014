@@ -33,7 +33,23 @@ body {
   font-family: 'Lato', sans-serif;
 }
 
+video {
+  opacity: 0;
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+  top:55px;
+  @include trans;
+}
+.home video {
+  opacity: 0.1;
+}
+
+
+
 .wrap {
+  position: relative;
+  z-index: 100;
   min-height: 100%;
   /* equal to footer height */
   margin-bottom: -170px; 
@@ -363,6 +379,8 @@ label {
 .footer, .wrap:after {
   /* .push must be the same height as footer */
   height: 170px; 
+  position: relative;
+  z-index: 1000;
 }
 
 .footer {
