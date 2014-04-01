@@ -11,7 +11,10 @@ app.PageView = Backbone.View.extend({
   },
 
   render: function(slug) {
-    if (!slug) { slug = 'home'; }
+    if (!slug) { 
+      slug = 'home';
+      $('.main-vid').trigger('play');
+    }
     if (slug == 'about') {
       this.template = _.template( $( '#about-template' ).html() );
     }
@@ -21,6 +24,9 @@ app.PageView = Backbone.View.extend({
 
     if (slug == 'contact') {
       this.loadForm();
+    }
+    if (slug != 'home') {
+      $('.main-vid').trigger('pause');
     }
   },
 
