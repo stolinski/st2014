@@ -1,4 +1,8 @@
-// Mixins
+/*------------------------------------*\
+    $MIXINS
+\*------------------------------------*/
+
+
 @mixin trans($sec: 0.2s) {
   -webkit-transition: all $sec ease-out;
      -moz-transition: all $sec ease-out;

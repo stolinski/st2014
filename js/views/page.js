@@ -38,6 +38,11 @@ app.PageView = Backbone.View.extend({
   change: function(slug) {
     this.render(slug);
   },
+
+  about: function() {
+    this.render('about');
+  },
+
   loadForm: function() {
     var contact = new app.Contact();
     var form = new Backbone.Form({

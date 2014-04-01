@@ -1,0 +1,38 @@
+/*------------------------------------*\
+    $BASE
+\*------------------------------------*/
+
+
+html, body {
+  height: 100%;
+}
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+       box-sizing: border-box;
+}
+
+::-moz-selection {
+    text-shadow: none;
+    color: #FFF;
+    @include trans;
+}
+
+::selection {
+    text-shadow: none;
+    color: #FFF;
+    @include trans;
+}
+
+input {
+  color:#333;
+  padding:5px;
+  @include border-radius(4px);
+  @include fs(24px);
+}
+
+label {
+  display: block;
+  margin: 20px 0 5px;
+  @include fs(24px);
+} 

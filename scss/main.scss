@@ -1,37 +1,38 @@
+/*------------------------------------*\
+    $TABLE OF CONTENTS
+\*------------------------------------*/
+
+/**
+ * Imports................Brings in Compass, Toolkit, Breakpoint, Reset, Susy2, Mixins, Variables and Components
+ * Components.............Site Components 
+ * * Base.................Base Element Styles
+ * * Typography...........Base Type Styles
+ * * * Content Sub-section
+ */
+
+
+
+
+
+/*------------------------------------*\
+    $IMPORTS
+\*------------------------------------*/
+
+
 @import "compass";
 @import "toolkit";
 @import "breakpoint";
 @import 'mixins';
 @import 'vars';
 @import "reset";
-@import 'typography';
-
-html, body {
-  height: 100%;
-}
-
-*, *:before, *:after {
-  -moz-box-sizing: border-box;
-       box-sizing: border-box;
-}
-
-::-moz-selection {
-    text-shadow: none;
-    color: #FFF;
-    @include trans;
-}
-
-::selection {
-    text-shadow: none;
-    color: #FFF;
-    @include trans;
-}
+@import 'components/**/*';
 
 body {
   background: #333;
   color:white;
   font-family: 'Lato', sans-serif;
 }
+
 
 video {
   opacity: 0;
@@ -157,18 +158,6 @@ video {
 //     @include transform(rotate(22.5deg));
 //   }
 // }
-input {
-  color:#333;
-  padding:5px;
-  @include border-radius(4px);
-  @include fs(24px);
-}
-
-label {
-  display: block;
-  margin: 20px 0 5px;
-  @include fs(24px);
-}
 
 .message textarea {
   height: 200px;
