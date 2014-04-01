@@ -2,6 +2,7 @@
 require 'compass-normalize'
 require 'rgbapng'
 require 'toolkit'
+require 'breakpoint'
 require 'sass-globbing'
 
 # Set this to the root of your project when deployed:

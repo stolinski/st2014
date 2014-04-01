@@ -1,6 +1,6 @@
 @import "compass";
 @import "toolkit";
-// @import "breakpoint";
+@import "breakpoint";
 @import 'mixins';
 @import 'vars';
 @import "reset";
@@ -141,6 +141,35 @@ body {
 //     @include transform(rotate(22.5deg));
 //   }
 // }
+input {
+  color:#333;
+  padding:5px;
+  @include border-radius(4px);
+  @include fs(24px);
+}
+
+label {
+  display: block;
+  margin: 20px 0 5px;
+  @include fs(24px);
+}
+
+.message textarea {
+  height: 200px;
+  width: 100%;
+  @include border-radius(4px);
+}
+
+.btn {
+  margin: 20px 0;
+  padding:10px 20px;
+  color:white;
+  cursor: pointer;
+  font-weight: 900;
+  @include fs(24px);
+  @include border-radius(4px);
+  @include trans;
+}
 
 .name {
   margin: 0;
@@ -190,12 +219,21 @@ body {
   }
   body.#{$item} .main-content a {
     color: $bgcolor;
+    &:hover {
+      text-decoration: underline;
+    }
   }
   body.#{$item} ::-moz-selection {
     background: $bgcolor;
   }
   body.#{$item} ::selection {
     background: $bgcolor;
+  }
+  body.#{$item} .btn {
+    background: $bgcolor;
+    &:hover {
+      background: $bgcolor - 30;
+    }
   }
 }
 
@@ -216,9 +254,12 @@ body {
 // Resume
 .resume {
   background: $footer;
-  width: 80%;
+  width: 98%;
   margin: 80px auto;
   font-family:"Inconsolata", monospace;
+  @include breakpoint($med) {
+    width: 80%;
+  }
   .fakebuttons {
     background: pcolor(about);
     height: 7px;
@@ -271,11 +312,11 @@ body {
   }
   h4 {
     color:#aaa;
-    margin:30px 0 20px;    
+    margin:50px 0 20px;    
   }
   h5 {
     color:#aaa;
-    margin:20px 0 6px;
+    margin:40px 0 6px;
   }
   .time {
     margin-bottom: 10px;
@@ -284,9 +325,12 @@ body {
     color:#aaa;
   }
   ul {
-    margin: 0 0 0 20px;
+    margin: 0;
+    @include breakpoint($med) {
+      margin: 0 0 0 20px;
+    }
     li {
-      margin-bottom: 10px;
+      margin-bottom: 15px;
       color:#eee;
     }
   }

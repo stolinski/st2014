@@ -3,7 +3,7 @@ $footer: #222;
 $pages: (
   home: #2980b9,
   about: #16a085,
-  projects: #c0392b,
+  projects: #e74c3c,//#c0392b,
   contact: #f1c40f,//#8e44ad,
 );
 
@@ -16,3 +16,7 @@ $social: (
   youtube: #b00,
   bitbucket: #205081,
 );
+
+$small: 500px;
+$med: 800px;
+$wide:1200px;

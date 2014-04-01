@@ -36,7 +36,7 @@ app.PageView = Backbone.View.extend({
     var form = new Backbone.Form({
       model: contact
     }).render();
-    this.$el.append(form.el).append("<input type='submit' value='submit' name='submit' />");
+    this.$el.append(form.el).append("<input class='btn' type='submit' value='submit' name='submit' />");
 
   }
 });
