@@ -7,7 +7,7 @@
  * Components.............Site Components 
  * * Base.................Base Element Styles
  * * Typography...........Base Type Styles
- * * * Content Sub-section
+ * Sections...............Page Sections
  */
 
 
@@ -59,6 +59,17 @@ video {
   content: "";
   display: block;
 }
+
+
+
+
+
+/*------------------------------------*\
+    $SECTIONS
+\*------------------------------------*/
+
+
+/*--$HEADER--*/
 
 .header {
   @include clearfix;
@@ -159,12 +170,6 @@ video {
 //   }
 // }
 
-.message textarea {
-  height: 200px;
-  width: 100%;
-  @include border-radius(4px);
-}
-
 .btn {
   margin: 20px 0;
   padding:10px 20px;
@@ -214,8 +219,20 @@ video {
   }
 }
 
-// Iterates over the pages setting color per page.
+/* $all_pages */
+.main-content {
+  padding: 40px 4%;
+  p {
+    @include fs(24px);
+    margin-bottom: 20px;
+  }
+  a {
+    text-decoration: none;
+  }
+}
+
 @each $item, $bgcolor in $pages { 
+  // Iterates over the pages setting color per page.
   body.#{$item} nav a.#{$item} {
     padding-bottom:14px;
   }
@@ -242,20 +259,22 @@ video {
   }
 }
 
-// Iterates over the social map to output proper social colors
-@each $site, $bgcolor in $social { 
-  .social {
-    .fa-#{$site} {
-      background: $bgcolor;
-      &:hover {
-        background: $bgcolor - 40;
-      }
+
+/* $home */
+.home {
+  .page-title {
+    margin-top:0;
+    font-weight: 300;
+    @include fs(36px);
+    @include breakpoint($med) {
+      margin-top: 40px;
+      @include fs(64px);      
     }
   }
 }
 
-// About Page
 
+/* $about */
 // Resume
 .resume {
   background: $footer;
@@ -341,35 +360,23 @@ video {
   }
 }
 
-
-
-.social {
-  .fa {
-    padding: 5px 8px;
-    @include trans;
-    @include border-radius(3px);
-  }
-  .text {
-    padding-left:10px;
-  }
+/* $contact */
+.message textarea {
+  height: 200px;
+  width: 100%;
+  @include border-radius(4px);
 }
 
-.main-content {
-  padding: 40px 4%;
-  p {
-    @include fs(24px);
-    margin-bottom: 20px;
-  }
-  a {
-    text-decoration: none;
-  }
-}
+
+/*--$FOOTER--*/
 
 .footer, .wrap:after {
-  /* .push must be the same height as footer */
-  height: 170px; 
+  
   position: relative;
   z-index: 1000;
+  @include breakpoint($med) {
+    height: 170px; 
+  }
 }
 
 .footer {
@@ -380,12 +387,46 @@ video {
     color:white;
     text-decoration: none;
   }
-  .social li {
-    float: left;
-    display: list-item;
-    + li {
-      margin-left: 20px;
+  h3 {
+    text-align: center;
+  }
+  @include breakpoint($med) {
+    h3 {
+      text-align: left;
     }
   }
 }
 
+/* $social */
+@each $site, $bgcolor in $social {
+// Iterates over the social map to output proper social colors 
+  .social {
+    .fa-#{$site} {
+      background: $bgcolor;
+      &:hover {
+        background: $bgcolor - 40;
+      }
+    }
+  }
+}
+
+.social {
+  text-align: center;
+  .fa {
+    padding: 5px 8px;
+    @include trans;
+    @include border-radius(3px);
+  }
+  .text {
+    padding-left:10px;
+  }
+  li {
+    margin-bottom: 20px;
+    @include breakpoint($med) {
+      float: left;
+    + li {
+        margin-left: 20px;
+      }
+    }
+  }
+}

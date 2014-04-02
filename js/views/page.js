@@ -31,7 +31,6 @@ app.PageView = Backbone.View.extend({
   },
 
   body: function (slug) {
-    if (!slug) { slug = 'home'; }
     $('body').removeClass().addClass(slug);
   },
 

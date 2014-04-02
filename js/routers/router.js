@@ -10,10 +10,12 @@ var Workspace = Backbone.Router.extend({
 
     showAbout: function(slug){
       this.view = new app.PageView();
+      this.view.body('about');
       this.view.about();
     },
 
     defaultRoute: function(path) {
+      if (!path) { path = 'home'; }
       this.view = new app.PageView();
       this.view.body(path);
       this.view.change(path);
