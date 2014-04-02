@@ -49,11 +49,13 @@ video {
 
 
 .wrap {
-  position: relative;
-  z-index: 100;
-  min-height: 100%;
-  /* equal to footer height */
-  margin-bottom: -170px; 
+  @include breakpoint($med) {
+    position: relative;
+    z-index: 100;
+    min-height: 100%;
+    /* equal to footer height */
+    margin-bottom: -170px; 
+  }
 }
 .wrap:after {
   content: "";
@@ -76,6 +78,8 @@ video {
   background: #ECF0F1;
   overflow: hidden;
   height: 52px;
+  position: fixed;
+  width: 100%;
 }
 
 
@@ -221,7 +225,7 @@ video {
 
 /* $all_pages */
 .main-content {
-  padding: 40px 4%;
+  padding: 92px 4% 40px;
   p {
     @include fs(24px);
     margin-bottom: 20px;
