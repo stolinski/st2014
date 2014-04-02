@@ -11,8 +11,7 @@ app.PageView = Backbone.View.extend({
   },
 
   render: function(slug) {
-    if (!slug) { 
-      slug = 'home';
+    if (slug == 'home') {
       $('.main-vid').trigger('play');
     }
     if (slug == 'about') {

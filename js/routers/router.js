@@ -27,4 +27,4 @@ var Workspace = Backbone.Router.extend({
 
 /* Now that we have a router setup, we need to instantiate it */
 app.PageRouter = new Workspace();
-Backbone.history.start();
+Backbone.history.start({pushState: true});
