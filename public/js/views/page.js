@@ -21,9 +21,6 @@ app.PageView = Backbone.View.extend({
     var goal = _.findWhere(app.Pages.toJSON(), {slug: slug});
     this.$el.html(this.template(goal));
 
-    if (slug == 'contact') {
-      this.loadForm();
-    }
     if (slug != 'home') {
       $('.main-vid').trigger('pause');
     }
@@ -40,13 +37,4 @@ app.PageView = Backbone.View.extend({
   about: function() {
     this.render('about');
   },
-
-  loadForm: function() {
-    var contact = new app.Contact();
-    var form = new Backbone.Form({
-      model: contact
-    }).render();
-    this.$el.append(form.el).append("<input class='btn' type='submit' value='submit' name='submit' />");
-
-  }
 });

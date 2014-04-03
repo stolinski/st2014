@@ -1,7 +1,10 @@
 {
   "name": "STbb",
   "version": "1.0.0",
-  "dependencies": {},
+  "dependencies": {
+    "express": "latest",
+    "prerender-node": "latest"
+    },
   "devDependencies": {
     "gulp-jshint": "~1.4.0",
     "gulp-changed": "~0.1.0",
