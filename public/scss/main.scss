@@ -365,10 +365,8 @@ video {
 }
 
 /* $contact */
-.message textarea {
-  height: 200px;
-  width: 100%;
-  @include border-radius(4px);
+.cont a {
+  @include fs(36px);
 }
 
 

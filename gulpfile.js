@@ -13,22 +13,22 @@ var jshint = require('gulp-jshint')
 
 
 var paths = {
-  scripts: '.public/js/*.js',
-  images: '.public/images/**/*',
-  sass: '.public/scss/**/*'
+  scripts: './public/js/*.js',
+  images: './public/images/**/*',
+  sass: './public/scss/**/*'
 };
 
 
 // JS hint task
 gulp.task('scripts', function() {
-  gulp.src('.public/js/index.js')
+  gulp.src('./public/js/index.js')
     .pipe(jshint())
     .pipe(jshint.reporter('default'));
 });
 
 // minify new images
 gulp.task('images', function() {
-  var imgSrc = '.public/images/**/*',
+  var imgSrc = './public/images/**/*',
       imgDst = './build/images';
   gulp.src(imgSrc)
     .pipe(changed(imgDst))
@@ -39,14 +39,14 @@ gulp.task('images', function() {
 
 // Styles
 gulp.task('styles', function() {
-  return gulp.src('.public/scss/**/*')
+  return gulp.src('./public/scss/**/*')
     .pipe(plumber())
     .pipe(compass({
-        sass: '.public/scss',
-        css: '.public/css'
+        sass: './public/scss',
+        css: './public/css'
     }))
     .pipe(minifyCSS())
-    .pipe(gulp.dest('.public/css'))
+    .pipe(gulp.dest('./public/css'))
     .pipe(livereload());
 });
 
