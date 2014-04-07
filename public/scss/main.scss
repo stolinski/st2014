@@ -78,6 +78,7 @@ video {
   background: #ECF0F1;
   overflow: hidden;
   height: 52px;
+  z-index: 1000;
   position: fixed;
   width: 100%;
 }
@@ -175,14 +176,26 @@ video {
 // }
 
 .btn {
-  margin: 20px 0;
+  margin:0 0 20px;
   padding:10px 20px;
-  color:white;
+  color:white !important;
   cursor: pointer;
+  display: inline-block;
   font-weight: 900;
   @include fs(24px);
   @include border-radius(4px);
   @include trans;
+  &:hover {
+    text-decoration: none !important;
+  }
+  &.download {
+    text-align: center;
+    &:after {
+      margin-left: 20px;
+      content:"\f019";
+      font-family:'FontAwesome';
+    }
+  }
 }
 
 .name {
@@ -366,7 +379,10 @@ video {
 
 /* $contact */
 .cont a {
-  @include fs(36px);
+  @include fs(26px);
+  @include breakpoint($med) {
+    @include fs(36px);  
+  }
 }
 
 
