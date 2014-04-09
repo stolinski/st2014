@@ -4,6 +4,7 @@ var Workspace = Backbone.Router.extend({
     /* define the route and function maps for this router */
     routes: {
       'about' : 'showAbout',
+      'projects' : 'showProjects',
       ':slug' : 'defaultRoute',
       '*path' : 'defaultRoute'
     },
@@ -14,12 +15,18 @@ var Workspace = Backbone.Router.extend({
       this.view.about();
     },
 
+    showProjects: function(slug){
+      this.view = new app.PageView();
+      this.view.body('projects');
+      this.view.projects();
+    },
+
     defaultRoute: function(path) {
       if (!path) { path = 'home'; }
       this.view = new app.PageView();
       this.view.body(path);
       this.view.change(path);
-    }
+    },
 
 });
 

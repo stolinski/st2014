@@ -5,8 +5,7 @@ app.Project = Backbone.Model.extend({
   defaults: {
     title: '',
     url: '',
-    image: '',
-    body:''
+    meta: '',
   },
 
 });

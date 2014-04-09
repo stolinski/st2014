@@ -14,9 +14,6 @@ app.PageView = Backbone.View.extend({
     if (slug == 'home') {
       $('.main-vid').trigger('play');
     }
-    if (slug == 'about') {
-      this.template = _.template( $( '#about-template' ).html() );
-    }
 
     var goal = _.findWhere(app.Pages.toJSON(), {slug: slug});
     this.$el.html(this.template(goal));
@@ -36,7 +33,13 @@ app.PageView = Backbone.View.extend({
   },
 
   about: function() {
+    this.template = _.template( $( '#about-template' ).html() );
     this.render('about');
+  },
+
+  projects: function() {
+    this.template = _.template( $( '#project-template' ).html() );
+    this.render('projects');
   },
 
   mail: function() {

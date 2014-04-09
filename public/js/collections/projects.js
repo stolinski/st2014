@@ -5,7 +5,7 @@ var ProjectsList = Backbone.Collection.extend({
 
 });
 
-var a = new app.Project({ title: '', url: '', image: '', body:''});
+var a = new app.Project({ title: 'Yo', url: 'https://www.youtube.com/watch?v=2KvHr2uGuMM#t=19', meta: '<p>Built by SkoT</p>'});
     b = new app.Project({});
     d = new app.Project({});
     c = new app.Project({});
