@@ -4,7 +4,16 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Backbone</title>
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png" />
+  <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png" />
+  <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png" />
+  <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png" />
+  <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png" />
+  <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png" />
+  <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png" />
+    <title>Scott Tolinski - Web Developer</title>
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/font-awesome.css">
     <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,900,400italic,700italic' rel='stylesheet' type='text/css'>
@@ -13,6 +22,7 @@
 <video class="main-vid" muted autoplay loop src="/img/moves.mp4"></video>
 <div class="wrap">
   <header class="header">
+    <div class="header-wrap">
     <a class="homelink" href="/#"><span class="logo">ST</span><h1 class="name">Scott Tolinski</h1></a>
     <nav class="main-nav">
       <ul>
@@ -21,6 +31,7 @@
         <li><a class="contact" href="/#contact">Contact</a></li>
       </ul>
     </nav>
+    </div>
   </header>
   <main id="appbody" class="main-content">
   </main>
@@ -40,6 +51,11 @@
   <script type="text/template" id="page-template">
     <h2 class="page-title"><%= title %></h2>
     <%= body %>
+  </script>
+
+  <script type="text/template" id="project-template">
+    <h2 class="page-title"><%= title %></h2>
+    <%= body %> 
   </script>
 
   <script type="text/template" id="about-template">
