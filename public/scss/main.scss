@@ -33,8 +33,18 @@ body {
   font-family: 'Lato', sans-serif;
 }
 
+.vid-img {
+  opacity: 0;
+  position: absolute;
+  width: 100%;
+  height: auto;
+  z-index: 1;
+  top:55px;
+  @include trans;  
+}
 
 video {
+  display: none;
   opacity: 0;
   position: absolute;
   height: 100%;
@@ -43,9 +53,19 @@ video {
   top:55px;
   @include trans;
 }
-.home video {
+.home video, .home .vid-img {
   opacity: 0.1;
 }
+
+@include breakpoint(500px) {
+  .vid-img {
+    display: none;
+  }
+  video {
+    display: block;
+  }
+}
+
 @include breakpoint(1298px) {
   video {
     height: auto;
