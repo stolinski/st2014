@@ -211,10 +211,12 @@ video {
   @include trans;
 }
 
+@include breakpoint($small) {
 .homelink:hover {
   .name {
     left:65px;
   }
+}
 }
 
 .main-nav {
@@ -238,7 +240,7 @@ video {
 
 /* $all_pages */
 .main-content {
-  padding: 92px 4% 40px;
+  padding: 120px 4% 80px;
   p {
     @include fs(24px);
     margin-bottom: 20px;
