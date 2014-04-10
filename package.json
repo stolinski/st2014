@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "dependencies": {
     "express": "latest",
-    "prerender-node": "latest"
+    "prerender-node": "latest",
+    "connect": "latest"
     },
   "devDependencies": {
     "gulp-jshint": "~1.4.0",
