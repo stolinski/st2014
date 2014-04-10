@@ -51,7 +51,7 @@ app.PageView = Backbone.View.extend({
         model: item
     });
     console.log(projectView.render().el);
-    this.$el.append( projectView.render().el );
+    $('.project-list').append( projectView.render().el );
   },  
 
   mail: function() {

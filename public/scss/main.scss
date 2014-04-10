@@ -431,6 +431,14 @@ video {
   }
 }
 
+/* $project */
+.project-list {
+  li {
+    margin-top: 50px;
+  }
+}
+
+
 /* $contact */
 .cont a {
   @include fs(26px);
