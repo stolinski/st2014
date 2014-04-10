@@ -38,9 +38,21 @@ app.PageView = Backbone.View.extend({
   },
 
   projects: function() {
-    this.template = _.template( $( '#project-template' ).html() );
-    this.render('projects');
+    var goal = _.findWhere(app.Pages.toJSON(), {slug: 'projects'});
+    this.$el.html(this.template(goal));
+    app.Projects.each(function( item ) {
+      this.renderProject( item );
+    }, this );
   },
+
+
+  renderProject: function( item ) {
+    var projectView = new app.ProjectView({
+        model: item
+    });
+    console.log(projectView.render().el);
+    this.$el.append( projectView.render().el );
+  },  
 
   mail: function() {
     var mail = "";

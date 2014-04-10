@@ -10,4 +10,4 @@ var a = new app.Project({ title: 'Yo', url: 'https://www.youtube.com/watch?v=2Kv
     d = new app.Project({});
     c = new app.Project({});
 
-app.Pages = new PageList([a,b,c,d]);
+app.Projects = new ProjectsList([a,b,c,d]);
