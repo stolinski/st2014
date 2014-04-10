@@ -238,6 +238,7 @@ video {
   }
   &.download {
     text-align: center;
+    background: #16A085;
     &:after {
       margin-left: 20px;
       content:"\f019";
@@ -499,6 +500,7 @@ video {
   }
   .text {
     padding-left:10px;
+    font-family: 'Lato', sans-serif;
   }
   li {
     margin-bottom: 20px;
