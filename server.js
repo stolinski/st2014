@@ -3,11 +3,9 @@ var express = require('express');
 
 var app = module.exports = express();
 
-app.configure(function(){
 
-  app.use(express.static("public"));
-  app.use(app.router);
-});
+app.use(express.static("public"));
+
 
 // This will ensure that all routing is handed over to AngularJS
 app.get('*', function(req, res){

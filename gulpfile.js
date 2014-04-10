@@ -9,6 +9,8 @@ var jshint = require('gulp-jshint')
 , minifyCSS = require('gulp-minify-css')
 , compass = require('gulp-compass')
 , livereload = require('gulp-livereload')
+, concat = require('gulp-concat')
+, stripDebug = require('gulp-strip-debug'),
   plumber = require('gulp-plumber');
 
 
@@ -17,6 +19,35 @@ var paths = {
   images: './public/images/**/*',
   sass: './public/scss/**/*'
 };
+
+
+
+
+
+
+// JS concat, strip debugging and minify
+gulp.task('scriptsm', function() {
+    gulp.src([
+        './public/js/lib/jquery-1.11.0.min.js',
+        './public/js/lib/underscore.js',
+        './public/js/lib/backbone-min.js',
+        './public/js/backbone.localStorage.js',
+        './public/js/backbone-forms.min.js',
+        './public/js/models/page.js',
+        './public/js/models/project.js',
+        './public/js/collections/pages.js',
+        './public/js/collections/projects.js',
+        './public/js/views/app.js',
+        './public/js/views/project.js',
+        './public/js/views/page.js',
+        './public/js/routers/router.js',
+        './public/js/app.js'
+      ])
+    .pipe(concat('script.js'))
+    .pipe(stripDebug())
+    .pipe(uglify())
+    .pipe(gulp.dest('./public/build/js/'));
+});
 
 
 // JS hint task
@@ -58,6 +89,7 @@ gulp.task('watch', function () {
       server.changed(evt.path);
   });
   gulp.watch(paths.scripts, ['scripts']);
+  gulp.watch(paths.scripts, ['scriptsm']);
   gulp.watch(paths.images, ['images']);
   gulp.watch(paths.sass, ['styles']);
 });
