@@ -1,6 +1,6 @@
 // include gulp
-var gulp = require('gulp'); 
- 
+var gulp = require('gulp');
+
 // include plug-ins
 var jshint = require('gulp-jshint')
 , changed = require('gulp-changed')
@@ -19,10 +19,6 @@ var paths = {
   images: './public/images/**/*',
   sass: './public/scss/**/*'
 };
-
-
-
-
 
 
 // JS concat, strip debugging and minify
@@ -56,6 +52,7 @@ gulp.task('scripts', function() {
     .pipe(jshint())
     .pipe(jshint.reporter('default'));
 });
+
 
 // minify new images
 gulp.task('images', function() {

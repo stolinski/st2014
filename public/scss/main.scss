@@ -4,7 +4,7 @@
 
 /**
  * Imports................Brings in Compass, Toolkit, Breakpoint, Reset, Susy2, Mixins, Variables and Components
- * Components.............Site Components 
+ * Components.............Site Components
  * * Base.................Base Element Styles
  * * Typography...........Base Type Styles
  * Sections...............Page Sections
@@ -50,15 +50,20 @@ body {
   opacity: 0;
   max-width: auto;
   height: 355px;
-  @include trans;  
+  @include trans;
 }
 
 video {
-  display: none;
-  opacity: 0;
-  height: 100%;
-  max-height: 730px;
   @include trans;
+  opacity: 0;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -100;
 }
 .home video, .home .vid-img {
   opacity: 0.1;
@@ -75,9 +80,9 @@ video {
 
 @include breakpoint(1298px) {
   video {
-    height: auto;
-    max-height: initial;
-    width: 100%;
+    // height: auto;
+    // max-height: initial;
+    // width: 100%;
   }
 }
 
@@ -94,13 +99,13 @@ video {
     .vid-img {
       height: auto;
       max-height: initial;
-      width: 100%; 
+      width: 100%;
     }
   }
   @include breakpoint(1298px) {
     height: auto;
     max-height: initial;
-    width: 100%;    
+    width: 100%;
   }
 }
 
@@ -113,7 +118,7 @@ video {
     z-index: 100;
     min-height: 100%;
     /* equal to footer height */
-    margin-bottom: -170px; 
+    margin-bottom: -170px;
   }
   @include breakpoint(500px) {
     overflow: visible;
@@ -212,7 +217,7 @@ video {
 }
 
 .res-download {
-  text-align: center;  
+  text-align: center;
 }
 
 .name {
@@ -267,7 +272,7 @@ video {
   }
 }
 
-@each $item, $bgcolor in $pages { 
+@each $item, $bgcolor in $pages {
   // Iterates over the pages setting color per page.
   body.#{$item} nav a.#{$item} {
     padding-bottom:14px;
@@ -304,7 +309,7 @@ video {
     @include fs(36px);
     @include breakpoint($med) {
       margin-top: 40px;
-      @include fs(64px);      
+      @include fs(64px);
     }
   }
 }
@@ -336,8 +341,8 @@ video {
       width: 7px;
       display: block;
       @include border-radius(7px);
-      position: relative; 
-      top: 0; 
+      position: relative;
+      top: 0;
     }
     &:before {
       left: -13px;
@@ -372,7 +377,7 @@ video {
   }
   h4 {
     color:#aaa;
-    margin:50px 0 20px;    
+    margin:50px 0 20px;
   }
   h5 {
     color:#aaa;
@@ -408,7 +413,7 @@ video {
 .cont a {
   @include fs(26px);
   @include breakpoint($med) {
-    @include fs(36px);  
+    @include fs(36px);
   }
 }
 
@@ -416,11 +421,11 @@ video {
 /*--$FOOTER--*/
 
 .footer, .wrap:after {
-  
+
   position: relative;
   z-index: 1000;
   @include breakpoint($med) {
-    height: 170px; 
+    height: 170px;
   }
 }
 
@@ -444,7 +449,7 @@ video {
 
 /* $social */
 @each $site, $bgcolor in $social {
-// Iterates over the social map to output proper social colors 
+// Iterates over the social map to output proper social colors
   .social {
     .fa-#{$site} {
       background: $bgcolor;
